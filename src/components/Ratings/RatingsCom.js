@@ -26,6 +26,7 @@ import * as reduxActions from "../../common/actions";
 import RatingList from "./RatingsList";
 import RatingProgress from "./RatingProgress";
 // import ParticlesBg from "particles-bg";
+import RatingAddModal from "./RatingAddModal";
 
 import Moment from "react-moment";
 //import Button from '@material-ui/core/Button';
@@ -88,6 +89,9 @@ export function RatingsCom({
 
 	const [guest, setGuestUser] = useState(false);
 
+	const [modalShow,setModalShow] = useState(false);
+    const [redirect,setRedirect] = useState(false);
+
 	useEffect(() => {
 		setItemIdd(product);
 		if (typeof product !== "undefined") {
@@ -117,6 +121,8 @@ export function RatingsCom({
 	const addRate = (id, userName, value, comment) => {
 		const date = new Date();
 		if (value === 0 || comment === "") {
+			setModalShow(true);
+
 		} else {
 			addRating(id, userName, value, comment, date);
 			setComment("");
@@ -155,6 +161,10 @@ export function RatingsCom({
 
 	return (
 		<div>
+		<RatingAddModal
+		show={modalShow}
+		onHide={() => setModalShow(false)}
+		redirect={redirect}/>
 			<div
 				style={{
 					marginLeft: "5%",

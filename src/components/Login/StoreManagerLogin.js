@@ -112,7 +112,7 @@ const login = async(email,password) => {
 
         loginSuccess(decodedUser);
 
-        history.push("/storeDash"); // redirects to storemanager dashboard
+        history.push("/ManagerDash"); // redirects to storemanager dashboard
         
   
       
