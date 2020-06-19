@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import logo from '../images/LOGO.png'
+import logo from '../images/logo.png'
 import '../index.css'
 import {connect} from "react-redux";
 import {Link, useHistory} from 'react-router-dom'
@@ -14,7 +14,6 @@ const styles = {
         animationName: Radium.keyframes(bounce, 'bounce')
     }
 }
-
 function Header(props) {
 
     const history = useHistory();
@@ -45,13 +44,13 @@ function Header(props) {
 
                 <img src={logo} alt="" class="imageCenter"/>
                 <Link to="/cart" style={{textDecoration: 'none'}}>
-                    <i className=" nav-link active fas fa-shopping-bag fa-lg  "
-                       style={{color: "#7CFC00 ", fontSize: '4'}}> <sup> <span style={{color: "#628C07 "}} class="badge badge-pill badge-light">{cartCount}</span></sup></i>
+                    <i className=" nav-link active fas fa-shopping-bag fa-lg "
+                       style={{color: "#7CFC00 ", fontSize: '4'}}> <sup> <span style={{color: "#628C07 "}} class="badge badge-pill badge-light"> {cartCount}</span></sup></i>
                 </Link>
                 <Link to="/wishlist" style={{textDecoration: 'none'}}>
                     <i className=" nav-link active fas fa-heart fa-lg " style={{color: " #7CFC00 ", fontSize: "8"}}>
                         <sup><span class="badge badge-pill badge-light"
-                                   style={{color: "#628C07 "}}>{props.wishlistCount}</span></sup></i>
+                                   style={{color: "#628C07 "}}> {props.wishlistCount}</span></sup></i>
                 </Link>
                 {props.auth.isAuthenticated?
                     <div>
@@ -64,8 +63,6 @@ function Header(props) {
                         history.push("/login")
                     }}><i className="far fa-user-circle"/>Login
                     </button>
-
-
                 }
             </nav>
 

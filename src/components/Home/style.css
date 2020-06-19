@@ -1148,7 +1148,7 @@ ol {
 	text-align: center; }
 @media (min-width: 768px) {
 	.site-blocks-cover .site-block-cover-content {
-		margin-top: 50%; } }
+		margin-top: 20%; } }
 .site-blocks-cover.inner-page .site-block-cover-content {
 	margin-top: 20%;
 	text-align: center; }

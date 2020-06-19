@@ -1,5 +1,4 @@
 import React, { useState, useEffect }  from 'react';
-import {useHistory} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -18,11 +17,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import {Collapse} from '@material-ui/core';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
-
 import { useFormik } from 'formik';
 import * as Yup from "yup";
-
+import {Link, useHistory} from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -90,16 +87,9 @@ const validationSchema = Yup.object({
   xlMulti: Yup.number("Please enter a valid quantity"),
 });
 
-
-  
-
-  
-
-
-
-
 function AddItem({addItem}) {
-  
+
+
     const [msg, setMsg] = useState(); 
     const [show, setShow] = useState(false);
     const [severity, setSeverity] = useState();
@@ -157,7 +147,7 @@ function AddItem({addItem}) {
      console.log(productImage)
     }
 
-    let history = useHistory();
+    const history = useHistory();
     
     function redirect() {
       history.push("/AddItem");
@@ -222,7 +212,7 @@ function AddItem({addItem}) {
             setShow(true);
             setSeverity("success")
             setMsg(res.data.success);
-            setTimeout(() => { redirect()}, 4000);  
+            setTimeout(() => { redirect()}, 1000);
           }
         });
     
@@ -331,11 +321,13 @@ function AddItem({addItem}) {
   
 
   return (
+
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
+          <button type="button" className="btn btn-primary btn-sm" onClick={()=>history.push("/managerDash")}>Dashboard</button>
           <Typography component="h1" variant="h5">
             Add Item
           </Typography>
@@ -752,7 +744,6 @@ function AddItem({addItem}) {
             onClick={handleSubmit}>
             Add Item
           </Button>
-
         </form>
       </div>
     </Grid>
