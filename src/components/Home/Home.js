@@ -41,7 +41,7 @@ function Home() {
     }
     return (
         <div>
-            <Slider/>
+
             <ScrollAnimation animateIn="fadeIn"animateOut='fadeOut'>
                 <div className="benefit-items  mt-5" style={styles.bounce}>
                     <div className="row">
@@ -119,6 +119,10 @@ function Home() {
             <ScrollAnimation animateIn="fadeIn"animateOut='fadeOut'>
             <SmallCategories/>
             </ScrollAnimation>
+            <div className="mt-3">
+                <Slider/>
+            </div>
+
           {/*  <center>
                 <div>
                     <div className="imageSlider">

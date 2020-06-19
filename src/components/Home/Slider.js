@@ -8,7 +8,7 @@ import {fadeInRightBig,fadeIn} from 'react-animations';
 function Slider() {
     return (
        <div>
-        <ScrollAnimation animateIn="fadeInRightBig"animateOut='fadeOut'>
+        <ScrollAnimation animateIn="fadeIn"animateOut='fadeOut'>
            <div className="site-blocks-cover" data-aos="fade">
                <div className="container">
                    <div className="row">
