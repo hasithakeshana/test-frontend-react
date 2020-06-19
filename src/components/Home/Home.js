@@ -15,7 +15,7 @@ import latest1 from './icon/latest-1.jpg'
 import latest2 from './icon/latest-2.jpg'
 import latest3 from './icon/latest-3.jpg'
 import ScrollAnimation from 'react-animate-on-scroll';
-import {fadeInRightBig,fadeIn} from 'react-animations'
+import {fadeInRightBig,fadeIn,slideInRight} from 'react-animations'
 import Radium, {StyleRoot} from 'radium';
 import "animate.css/animate.min.css";
 
@@ -23,6 +23,7 @@ import './style.css'
 import image1 from "../../images/ImageSlider/imageSlider1.jpg";
 import image2 from "../../images/ImageSlider/imageSlider2.jpg";
 import SmallCategories from "./SmallCategories";
+import Slider from "./Slider";
 
 function Home() {
     const styles = {
@@ -40,10 +41,9 @@ function Home() {
     }
     return (
         <div>
-
-            <StyleRoot>
-
-                <div className="benefit-items ml-5 mt-5" style={styles.bounce}>
+            <Slider/>
+            <ScrollAnimation animateIn="fadeIn"animateOut='fadeOut'>
+                <div className="benefit-items  mt-5" style={styles.bounce}>
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="single-benefit">
@@ -80,9 +80,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </StyleRoot>
+            </ScrollAnimation>
 
-            <StyleRoot>
+
+            <ScrollAnimation animateIn="slideInRight"animateOut='fadeOut'>
             <div class="banner-section spad" style={style2.bounce}>
                 <div class="container-fluid">
                     <div class="row">
@@ -113,7 +114,8 @@ function Home() {
                     </div>
                 </div>
             </div>
-            </StyleRoot>
+            </ScrollAnimation>
+
             <ScrollAnimation animateIn="fadeIn"animateOut='fadeOut'>
             <SmallCategories/>
             </ScrollAnimation>
