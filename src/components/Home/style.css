@@ -1093,3 +1093,70 @@ ol {
 	margin: 0px 20px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-blocks-cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background: #f9f9f9;
+	position: relative;
+	overflow: hidden;
+	z-index: 9; }
+.site-blocks-cover, .site-blocks-cover .row {
+	min-height: 600px;
+	height: calc(100vh - 174px); }
+.site-blocks-cover.inner-page, .site-blocks-cover.inner-page .row {
+	min-height: 400px;
+	height: 500px; }
+.site-blocks-cover h2 {
+	font-size: 14px;
+	font-weight: normal;
+	color: #000;
+	letter-spacing: .2em;
+	text-transform: uppercase; }
+.site-blocks-cover h1 {
+	font-size: 50px;
+	font-weight: 900;
+	color: #000;
+	margin-bottom: 30px;
+	text-transform: uppercase; }
+@media (min-width: 768px) {
+	.site-blocks-cover h1 {
+		font-size: 70px; } }
+.site-blocks-cover p {
+	color: #333333;
+	font-size: 20px;
+	line-height: 35px; }
+.site-blocks-cover .intro-text {
+	font-size: 16px;
+	line-height: 1.5; }
+.site-blocks-cover .site-block-cover-content {
+	margin-top: 20%;
+	text-align: center; }
+@media (min-width: 768px) {
+	.site-blocks-cover .site-block-cover-content {
+		margin-top: 20%; } }
+.site-blocks-cover.inner-page .site-block-cover-content {
+	margin-top: 20%;
+	text-align: center; }
+@media (min-width: 768px) {
+	.site-blocks-cover.inner-page .site-block-cover-content {
+		margin-top: 30%; } }
+
+
+.search-wrap .container {
+	position: relative;
+	height: 100%; }

@@ -119,16 +119,16 @@ function Item(props) {
                 </div>
             }
 
-            <MDBBtn className="fas fa-heart fa-2x itemIcons mb-3"
+            <button className="btn btn-light-pink fas fa-heart fa-2x itemIcons   mb-3"
 
             onClick={()=>{
                 addWish(item)
-
              }}
             />
-          {/*  <MDBBtn className="fal fa-shopping-bag fa-2x mb-3"  onClick={()=>{
-               allIn(item)
-            }}/>*/}
+          {  <button className="btn btn-light-pink  fa-2x mb-3" onClick={()=>{
+
+          }}><i className="fab fa-amazon-pay "></i></button>
+          }
        </MDBCol>
 
     )
