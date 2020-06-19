@@ -150,7 +150,7 @@ const loginAsStoreManager = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-          <h1>StoreManager Login</h1>
+          <h1>Admin Login</h1>
           </Typography>
           <form className={classes.form} noValidate onSubmit={handleSubmit}>
             <TextField
@@ -219,7 +219,7 @@ const loginAsStoreManager = () => {
             className={classes.submit}
             onClick = {  () => loginAsStoreManager()  }
           >
-            Login as Admin
+            Login as StoreManager
           </Button>
           &nbsp;&nbsp;&nbsp;&nbsp;
          
