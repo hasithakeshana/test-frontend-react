@@ -113,7 +113,7 @@ const login = async(email,password) => {
         loginSuccess(decodedUser);
 
         history.push("/adminDash"); // redirects to Admin dashboard
-        
+        //adminDash
   
       
   }

@@ -74,7 +74,7 @@ function SignUp({signUpManager}) {
     
     const response = await axios.request({
         method: 'POST',
-        url: "https://fashion-store-backend.herokuapp.com/api/signupManager",
+        url: "https://fashion-store-backend.herokuapp.com/api/SMReg",
         headers: {
           'Content-Type': 'application/json;charset=UTF-8',
               "Access-Control-Allow-Origin": "*"
