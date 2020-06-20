@@ -11,6 +11,9 @@ import {useHistory} from 'react-router-dom';
 import HoverImage from "react-hover-image"
 
 import { makeStyles } from '@material-ui/core/styles';
+import {update_cart_count} from "../store/actions";
+import * as reduxActions from "../common/actions";
+import {connect} from "react-redux";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function ManagerDash() {
+function ManagerDash(props) {
 
   let history = useHistory();
  
@@ -36,6 +39,12 @@ function ManagerDash() {
   const classes = useStyles();
 
   return (
+      <div>
+          <nav className="navbar navbar-light bg-light">
+              <form className="form-inline">
+                  <button className="btn btn-outline-success" type="button" onClick={()=>{props.logOut();history.push("/login")}}>Logout</button>
+              </form>
+          </nav>
     <Grid container className={classes.root} spacing={2}>
       <Grid container className={classes.paper} justify="center" spacing={4}>
         <Grid item>
@@ -46,8 +55,19 @@ function ManagerDash() {
         </Grid>
       </Grid>
     </Grid>
+      </div>
   );
 }
 
+const mapStateToProps = state => {
+    return {
+    }
+}
 
-export default  (ManagerDash);
+const mapDispatchToProps = dispatch => {
+    return {
+        logOut: () => dispatch(reduxActions.logoutAction())
+    }
+}
+
+export default connect( mapStateToProps,mapDispatchToProps)(ManagerDash)

@@ -4,8 +4,10 @@ import img1 from "../images/addManager.jpg"
 import  cat from  "../images/cat.jpg"
 import Grid from '@material-ui/core/Grid';
 import Inputlabel from '@material-ui/core/InputLabel';
+import * as reduxActions from "../common/actions";
+import {connect} from "react-redux";
 
-function AdminDash() {
+function AdminDash(props) {
 
     let history = useHistory();
 
@@ -14,6 +16,12 @@ function AdminDash() {
     }
 
     return (
+        <div>
+            <nav className="navbar navbar-light bg-light">
+                <form className="form-inline">
+                    <button className="btn btn-outline-success" type="button" onClick={()=>{props.logOut();history.push("/login")}}>Logout</button>
+                </form>
+            </nav>
 
         <div align="center">
             <Grid>
@@ -25,8 +33,18 @@ function AdminDash() {
                 <Inputlabel> ADD Category </Inputlabel>
             </Grid>
         </div>
+        </div>
     );
 }
+const mapStateToProps = state => {
+    return {
+    }
+}
 
+const mapDispatchToProps = dispatch => {
+    return {
+        logOut: () => dispatch(reduxActions.logoutAction())
+    }
+}
 
-export default (AdminDash);
+export default connect( mapStateToProps,mapDispatchToProps)(AdminDash)
