@@ -73,9 +73,7 @@ function SignUp({signUpuser}) {
   }
 
   const fetchData = async (user) => {
-  
 
-    console.log(user)
     try {
       const data = user;
       const correctData = user["user"];
@@ -101,6 +99,7 @@ function SignUp({signUpuser}) {
             setMsg(res.data.success);
             setShow(true);
             setSeverity("success");
+            redirect();
             setTimeout(() => { redirect()}, 4000);  
           }            
         });
@@ -123,7 +122,6 @@ function SignUp({signUpuser}) {
       },
       validationSchema,
       onSubmit(values) {
-          console.log(values);
           const userObject = {
             "firstName": values.firstName,
             "lastName": values.lastName,
@@ -131,7 +129,6 @@ function SignUp({signUpuser}) {
             "password": values.password,
             "newsletter": checked
           }
-          console.log(userObject)
           fetchData(userObject);
            
       }

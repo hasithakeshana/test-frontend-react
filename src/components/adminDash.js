@@ -17,11 +17,11 @@ function AdminDash() {
 
         <div align="center">
             <Grid>
-                <img className="mt-5" width="200" height="200" src={img1} onClick={redirect}/>
+                <img className="mt-5" width="200" height="200" src={img1} onClick={()=>history.push('/addManager')}/>
                 <Inputlabel> ADD MANAGER </Inputlabel>
             </Grid>
             <Grid>
-                <img className="mt-5" width="200" height="200" src={cat} onClick={history.push("/")}/>
+                <img className="mt-5" width="200" height="200" src={cat} onClick={()=>history.push("/addCategory")}/>
                 <Inputlabel> ADD Category </Inputlabel>
             </Grid>
         </div>

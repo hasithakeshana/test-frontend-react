@@ -8,6 +8,7 @@ import {useHistory} from 'react-router-dom';
 
 function Discount(props) {
 
+
     const[productID,setProductID] = useState("");
     const[updateObject,setUpdateObject] = useState({ _id :"", discount : 0});
 
@@ -40,7 +41,7 @@ return(
                         <h6 className="card-title">Product ID : {props.product.itemID}</h6>
                         <h6 className="card-title">Product Name : {props.product.name}</h6>
                         <h6 className="card-title">Product Price : {props.product.price}</h6>
-                        <h6 className="card-title">Product Discount : {props.product.discount}</h6>
+                        <h6 className="card-title">Product Discount : {props.product.discount}%</h6>
                         <h6> </h6>
                     </div>
             </div>
